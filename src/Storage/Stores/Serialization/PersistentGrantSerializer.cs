@@ -97,7 +97,7 @@ public class PersistentGrantSerializer : IPersistentGrantSerializer
             {
                 if (_provider == null)
                 {
-                    throw new Exception("No IDataProtectionProvider configured.");
+                    throw new Exception($"No {nameof(IDataProtectionProvider)} configured.");
                 }
 
                 payload = _provider.Unprotect(container.Payload);
